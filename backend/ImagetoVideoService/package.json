@@ -1,0 +1,24 @@
+{
+  "name": "imagetovideoservice",
+  "version": "1.0.0",
+  "description": "A microservice for convering images to videos using ffmpeg",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sayeedk06/Veditor.git"
+  },
+  "keywords": [
+    "ffmpeg",
+    "video",
+    "image"
+  ],
+  "author": "Sayeed Md Shaiban, Paulina Luisce",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sayeedk06/Veditor/issues"
+  },
+  "homepage": "https://github.com/sayeedk06/Veditor#readme"
+}

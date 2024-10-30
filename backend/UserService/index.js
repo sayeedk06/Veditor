@@ -1,14 +1,15 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const app = express();
-const port = 8000;
+const port = 7000;
 require("dotenv").config();
 
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
-
+app.use(bodyParser.json());
 
 // Parse urlencoded bodies for POST form parameters
 app.use(express.urlencoded({ extended: true }));

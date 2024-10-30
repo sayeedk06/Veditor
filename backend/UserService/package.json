@@ -1,0 +1,32 @@
+{
+  "name": "userservice",
+  "version": "1.0.0",
+  "description": "A microservice that only handles user interaction like login, register and user details",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sayeedk06/Veditor.git"
+  },
+  "keywords": [
+    "aws",
+    "videoConverter",
+    "ffmpeg"
+  ],
+  "author": "Sayeed Md Shaiban, Paulina Luisce",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sayeedk06/Veditor/issues"
+  },
+  "homepage": "https://github.com/sayeedk06/Veditor#readme",
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.682.0",
+    "@aws-sdk/client-ssm": "^3.682.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
+  }
+}

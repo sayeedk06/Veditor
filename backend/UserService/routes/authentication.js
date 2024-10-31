@@ -3,7 +3,7 @@ const router = express.Router();
 // const auth = require("../middleware/auth");
 const Cognito = require("@aws-sdk/client-cognito-identity-provider");
 const aws_store_param = require("../middleware/param");
-// const qrcode = require("qrcode");
+const qrcode = require("qrcode");
 
 router.post("/register", aws_store_param.getParam, async (req, res) => {
   console.log("HEREEE")

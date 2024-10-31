@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Variables
-IMAGE_NAME="user-service"
-IMAGE_TAG="user-service"
-CONTAINER_NAME="user-service-container"
+IMAGE_NAME="video-gif-service"
+IMAGE_TAG="video-gif-service"
+CONTAINER_NAME="video-gif-container"
 DOCKERFILE_PATH="."
-HOST_PORT=8000
-CONTAINER_PORT=8000
+HOST_PORT=8001
+CONTAINER_PORT=8001
 
 # Step 1: Build the Docker image
 echo "Building Docker image..."

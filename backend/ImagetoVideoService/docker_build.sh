@@ -2,7 +2,7 @@
 
 # Variables
 IMAGE_NAME="image-video-service"
-IMAGE_TAG="latest"
+IMAGE_TAG="image-video-service"
 CONTAINER_NAME="image-video-container"
 DOCKERFILE_PATH="."
 HOST_PORT=7000

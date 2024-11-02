@@ -1,0 +1,99 @@
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.gallery-container {
+  padding: 2%;  
+}
+
+.video-gallery-container { 
+  display: flex;
+  flex-wrap: wrap;
+    /* Allows wrapping to the next line if the screen is too small */
+  gap: 16px;
+    /* Space between the videos */
+}
+
+video {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.upload-form {
+  padding: 5%;
+
+  background-color: #DBE2EF;
+}
+.upload {
+  text-align: center;
+  margin-inline: 5%;
+}
+.history {
+  padding: 2%;
+}
+.nav {
+  padding: 1%;
+  display: flex;
+  background-color: #282c34;
+}
+.nav li {
+  list-style-type: none;
+  margin: 0;
+  padding-inline: 1%;
+  color: aliceblue;
+}
+
+.profile-left {
+  padding: 2%;
+  background-color: #282c34;
+  min-height: 100vh;
+  color: aliceblue;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));     /* Dynamic grid */
+  gap: 16px;   /* gap: 50;
+  grid-template-columns: auto auto */
+}
+
+.left-container {
+  min-height: 100vh;
+  background-color: #282c34;
+  padding: 2%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-container {
+  min-height: 100vh;
+  padding: 2%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  height: 0;
+}
+
+img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}

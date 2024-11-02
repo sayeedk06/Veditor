@@ -15,6 +15,10 @@ function timeToSeconds(time) {
   return hours * 3600 + minutes * 60 + seconds;
 }
 
+router.get("/test", (req, res) => {
+  res.status(200).json({ message: "Video to GIF Service is working!" });
+});
+
 router.post(
   "/makegif",
   aws_store_param.getParam,

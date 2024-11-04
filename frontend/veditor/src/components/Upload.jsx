@@ -69,8 +69,8 @@ export default function Upload({ userName, selectedImages }) {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'multipart/form-data'
         }
-        // axios.post(process.env.REACT_APP_BASE_URL + 'video/upload', fd, {
-        axios.post(' http://n11684763-imagevideo-service-alb-943714070.ap-southeast-2.elb.amazonaws.com/api/video/upload', fd, {
+        axios.post(process.env.REACT_APP_BASE_URL + 'video/upload', fd, {
+        // axios.post(' http://n11684763-imagevideo-service-alb-943714070.ap-southeast-2.elb.amazonaws.com/api/video/upload', fd, {
             headers: header,
             responseType: 'blob',
             onUploadProgress: progressEvent => {

@@ -15,8 +15,8 @@ export default function ImageSearch({ selectedImages, setSelectedImages }) {
     setError(null);
 
     try {
-      // const apiURL = `${process.env.REACT_APP_BASE_URL}video/pixabay`;
-      const apiURL = ` http://n11684763-imagevideo-service-alb-943714070.ap-southeast-2.elb.amazonaws.com/api/video/pixabay`;
+      const apiURL = `${process.env.REACT_APP_BASE_URL}video/pixabay`;
+      // const apiURL = ` http://n11684763-imagevideo-service-alb-943714070.ap-southeast-2.elb.amazonaws.com/api/video/pixabay`;
       const params = { q: query };
       const url = `${apiURL}?${new URLSearchParams(params).toString()}`;
       const response = await axios.get(url);

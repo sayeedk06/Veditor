@@ -26,8 +26,8 @@ export default function Gallery({ userId }) {
             }).then(function (data) {
                 setGroups(data.groups)
 
-                // axios.get(process.env.REACT_APP_BASE_URL + "video", { headers: header })
-                axios.get("http://n11684763-imagevideo-service-alb-943714070.ap-southeast-2.elb.amazonaws.com/api/video", { headers: header })
+                axios.get(process.env.REACT_APP_BASE_URL + "video/", { headers: header })
+                // axios.get("http://n11684763-imagevideo-service-alb-943714070.ap-southeast-2.elb.amazonaws.com/api/video", { headers: header })
                 .then((response) => {
                   console.log(response.data);
                   setMediaList(response.data.videos); // Assuming the API returns a "videos" array

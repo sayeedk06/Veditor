@@ -49,8 +49,8 @@ export default function MakeGif({ userName }) {
         }
         // http://localhost:8000/api/
 
-        // axios.post(process.env.REACT_APP_BASE_URL + 'video/makegif', fd, {
-        axios.post('http://n11684763-video-gif-service-alb-1885147598.ap-southeast-2.elb.amazonaws.com/api/video/makegif', fd, {
+        axios.post(process.env.REACT_APP_BASE_URL + 'video/makegif', fd, {
+        // axios.post('http://n11684763-video-gif-service-alb-1885147598.ap-southeast-2.elb.amazonaws.com/api/video/makegif', fd, {
             headers: header,
             responseType: 'blob',
             onUploadProgress: progressEvent => {

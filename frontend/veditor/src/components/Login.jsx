@@ -55,7 +55,7 @@ export default function Login() {
         setLoading(true); // Start loading
         setError(""); // Clear any previous error
 
-        axios.post(process.env.REACT_APP_BASE_URL + 'authentication/login', {
+        axios.post(process.env.REACT_APP_USER_SERVICE + 'authentication/login', {
             username: username,
             password: password,
             mfaCode: mfaCode

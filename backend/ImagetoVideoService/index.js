@@ -8,7 +8,11 @@ const port = 7000;
 require("dotenv").config();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:3000", // Allow requests from any origin
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true // Allow cookies and authorization headers
+}));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(fileUpload());

@@ -35,7 +35,8 @@ export default function Login() {
         const mfa_session = Cookies.get('session')
         const mfa_user = Cookies.get('user_id')
         setIsOpen(false);
-        axios.post(process.env.REACT_APP_BASE_URL + 'authentication/mfa', {
+        // TODO
+        axios.post(process.env.REACT_APP_USER + 'authentication/mfa', {
             mfaCode: mfaCode,
             mfaSession: mfa_session,
             mfaUser: mfa_user
@@ -55,6 +56,7 @@ export default function Login() {
         setLoading(true); // Start loading
         setError(""); // Clear any previous error
 
+        // TODO
         axios.post(process.env.REACT_APP_BASE_URL + 'authentication/login', {
             username: username,
             password: password,

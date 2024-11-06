@@ -21,7 +21,7 @@ export default function Register() {
 
     const handleChange = (event) => {
         const { name, value } = event.target;
-        setInputs((prevFormData) => ({ ...prevFormData, [name]: value }));
+        setInputs((prevFormData) => ({ ...prevFormData, [name]: value })); 
 
         if (name === 'password') {
             validatePassword(value);

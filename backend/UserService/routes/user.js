@@ -3,7 +3,7 @@ const router = express.Router();
 const auth = require("../middleware/auth");
 const Cognito = require("@aws-sdk/client-cognito-identity-provider");
 const aws_store_param = require("../middleware/param");
-
+const deletefile = require('../middleware/errorFileCheck')
 router.get("/test", (req, res) => {
   res.status(200).json({ message: "User Service is working!" });
 });
@@ -12,6 +12,7 @@ router.get(
   "/",
   aws_store_param.getParam,
   auth.authenticateToken,
+  deletefile.deletefile,
   async function (req, res, next) {
     console.log("GET USER: ", req.cognito.USER_POOL);
 

@@ -26,12 +26,67 @@ export default function Upload({ userName, selectedImages }) {
     };
 
     const handleImage = (event) => {
-        setImages(event.target.files);
+        const files = event.target.files
+        setImages(files);
+        console.log(files)
     }
 
     const handleAudio = (event) => {
         setAudio(event.target.files[0]);
     }
+
+const handleUrl = async (event) => {
+    event.preventDefault();
+    const fileNames = Array.from(images).map(image => image.name );
+    
+    const imageNameForm = new FormData();
+    imageNameForm.append("images", fileNames)
+    for (const key in inputs) {
+        imageNameForm.append(key, inputs[key]);
+    }
+    imageNameForm.append('format', 'mp4');
+    if (audio) {
+        imageNameForm.append('audio', audio);
+    }
+
+    const token = Cookies.get('token');
+    const header = {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'multipart/form-data'
+    };
+    console.log("HEREE")
+
+    try {
+        const response = await axios.post(process.env.REACT_APP_BASE_URL + 'video/upload', imageNameForm, {
+            headers: header,
+            onUploadProgress: progressEvent => {
+                const progress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+                setUploadProgress(progress);
+            }
+        });
+
+        const urls = response.data
+        console.log(urls)
+        const result = await urls.map((url, index) => {
+            console.log(index)
+            return axios.put(url.toString(), images[index], {
+                headers: {
+                    'Content-Type': 'image/jpeg'
+                },
+                responseType: 'blob',
+            })
+        })
+       
+    } catch (err) {
+        console.log("Could not upload image: " + err);
+    }
+    
+    // const check = await axios.get(process.env.REACT_APP_VIDEO + 'video/makeVideo',{
+    //     header:header,
+    // })
+
+    // console.log(check)
+};
 
     const handleForm = async (event) => {
         event.preventDefault();
@@ -115,7 +170,7 @@ export default function Upload({ userName, selectedImages }) {
             >
                 {/* Upload Form */}
                 <Box maxW="md" w="full" mr={[0, 0, 8]}>
-                    <form onSubmit={handleForm} className='upload-form'>
+                    <form onSubmit={handleUrl} className='upload-form'>
                         <FormLabel color="#7E30E1">Upload Images:</FormLabel>
                         <Input
                             backgroundColor='#E9E9F5'
@@ -189,6 +244,7 @@ export default function Upload({ userName, selectedImages }) {
                         <Button type="submit" colorScheme='purple' bg="#7E30E1" color="#F3F8FF" _hover={{ bg: '#E26EE5' }} mb={4}>
                             Upload
                         </Button>
+                        
 
                         {/* Progress Bar with Percentage */}
                         {uploadProgress > 0 && (

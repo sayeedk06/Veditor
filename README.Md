@@ -13,7 +13,11 @@ This application leverages AWS Cognito with multifactor authentication to secure
 - AWS-Elastic Container Service(ECS)
 - AWS-Simple Queue Service(SQS)
 
-
+## Features
+- Multifactor Authentication
+- Video to gif converter
+- Image to video converter
+- Gallery
 
 ## Architecture
 The application is divided into 3 microservices for the backend API. These are:
